@@ -1,4 +1,5 @@
 {% set version = "3.2.0" %}
+{% set variant = "openblas" %}
 
 package:
   name: rsgislib
@@ -10,13 +11,14 @@ source:
   sha256: a9a75b863556bbd055fbe5b774b63a86b73e33fb9fc45f01b32af6a8e21c65a4
 
 build:
-    number: 0
+    number: 1
     # CGAL etc do not support vc9
     skip: True  # [py27 and win]
     features:
         - vc9  # [win and py27]
         - vc14  # [win and py>=35]
-        
+        - blas_{{ variant }}
+
 requirements:
   build:
     - cmake
@@ -33,8 +35,9 @@ requirements:
     - cgal
     - python
     - vc   9  # [win and py27]
-    - vc  14  # [win and py>=35]    
-    
+    - vc  14  # [win and py>=35]
+    - blas 1.1 {{ variant }}
+
   run:
     - hdf5 1.8.18|1.8.18.*
     - xerces-c
@@ -49,12 +52,15 @@ requirements:
     - python
     - vc   9  # [win and py27]
     - vc  14  # [win and py>=35]
+    - blas 1.1 {{ variant }}
 
 test:
   source_files:
     - python_tests
   commands:
     - cd python_tests/RSGISLibTests && python RSGIStests.py --all
+    - conda inspect linkages -p $PREFIX rsgislib  # [not win]
+    - conda inspect objects -p $PREFIX rsgislib  # [osx]
   imports:
     - rsgislib
     - rsgislib.imagecalibration
