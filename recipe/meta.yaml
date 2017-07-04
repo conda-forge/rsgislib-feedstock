@@ -10,12 +10,13 @@ source:
   sha256: a9a75b863556bbd055fbe5b774b63a86b73e33fb9fc45f01b32af6a8e21c65a4
 
 build:
-    number: 1
-    # CGAL etc do not support vc9
-    skip: True  # [py27 and win]
+    number: 2
+    # CGAL etc do not support earlier than vc14
+    skip: True  # [win and py<35]
     features:
         - vc9  # [win and py27]
-        - vc14  # [win and py>=35]
+        - vc10  # [win and py34]
+        - vc14  # [win and (py35 or py36)]
 
 requirements:
   build:
@@ -33,13 +34,14 @@ requirements:
     - cgal
     - python
     - vc   9  # [win and py27]
-    - vc  14  # [win and py>=35]
+    - vc  10  # [win and py34]
+    - vc  14  # [win and (py35 or py36)]
 
   run:
     - hdf5 1.8.18|1.8.18.*
     - xerces-c
     - muparser
-    - gsl
+    - gsl 2.2.*
     - geos 3.5.1
     - gdal 2.2.*
     - boost-cpp 1.63.*
@@ -48,7 +50,8 @@ requirements:
     - cgal
     - python
     - vc   9  # [win and py27]
-    - vc  14  # [win and py>=35]
+    - vc  10  # [win and py34]
+    - vc  14  # [win and (py35 or py36)]
 
 test:
   source_files:
