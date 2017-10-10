@@ -1,4 +1,4 @@
-{% set version = "3.2.0" %}
+{% set version = "3.3.16" %}
 
 package:
   name: rsgislib
@@ -10,7 +10,7 @@ source:
   sha256: a9a75b863556bbd055fbe5b774b63a86b73e33fb9fc45f01b32af6a8e21c65a4
 
 build:
-  number: 4
+  number: 0
   # CGAL etc do not support earlier than vc14
   skip: True  # [win and py<35]
   features:
