@@ -5,12 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  fn: rsgislib-{{ version }}.tar.gz
   url: https://bitbucket.org/petebunting/rsgislib/downloads/rsgislib-{{ version }}.tar.gz
   sha256: 9f1166ac770621d3b4121ae4d6a851fefb0d8a4d8ad1e49c23e71aaf296c99d4
 
 build:
-  number: 0
+  number: 1
   # CGAL etc do not support earlier than vc14
   skip: True  # [win and py<35]
   features:
@@ -26,7 +25,7 @@ requirements:
     - xerces-c
     - muparser
     - gsl 2.2.*
-    - geos 3.5.1
+    - geos 3.6.2
     - gdal 2.1.*
     - boost-cpp 1.64.*
     - kealib
@@ -42,7 +41,7 @@ requirements:
     - xerces-c
     - muparser
     - gsl 2.2.*
-    - geos 3.5.1
+    - geos 3.6.2
     - gdal 2.1.*
     - boost-cpp 1.64.*
     - kealib
@@ -59,8 +58,8 @@ test:
   commands:
     - cd python_tests/RSGISLibTests && python RSGIStests.py --all
     # These are timming out :-(
-    # - conda inspect linkages -p $PREFIX rsgislib  # [not win]
-    # - conda inspect objects -p $PREFIX rsgislib  # [osx]
+    # - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    # - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
   imports:
     - rsgislib
     - rsgislib.imagecalibration
