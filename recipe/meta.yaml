@@ -14,7 +14,6 @@ build:
   skip: True  # [win and py<35]
   features:
     - vc9  # [win and py27]
-    - vc10  # [win and py34]
     - vc14  # [win and (py35 or py36)]
 
 requirements:
@@ -27,13 +26,12 @@ requirements:
     - gsl 2.2.*
     - geos 3.6.2
     - gdal 2.1.*
-    - boost-cpp 1.64.*
+    - boost-cpp 1.65.1
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
     - cgal
     - python
     - vc   9  # [win and py27]
-    - vc  10  # [win and py34]
     - vc  14  # [win and (py35 or py36)]
 
   run:
@@ -43,13 +41,12 @@ requirements:
     - gsl 2.2.*
     - geos 3.6.2
     - gdal 2.1.*
-    - boost-cpp 1.64.*
+    - boost-cpp 1.65.1
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
     - cgal
     - python
     - vc   9  # [win and py27]
-    - vc  10  # [win and py34]
     - vc  14  # [win and (py35 or py36)]
 
 test:
