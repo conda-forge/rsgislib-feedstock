@@ -21,11 +21,11 @@ requirements:
     - cmake
     - toolchain
     - hdf5 1.8.18|1.8.18.*
-    - xerces-c
+    - xerces-c 3.2.0
     - muparser
     - gsl 2.2.*
     - geos 3.6.2
-    - gdal 2.1.*
+    - gdal 2.2.*
     - boost-cpp 1.65.1
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
@@ -36,11 +36,11 @@ requirements:
 
   run:
     - hdf5 1.8.18|1.8.18.*
-    - xerces-c
+    - xerces-c 3.2.0
     - muparser
     - gsl 2.2.*
     - geos 3.6.2
-    - gdal 2.1.*
+    - gdal 2.2.*
     - boost-cpp 1.65.1
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
