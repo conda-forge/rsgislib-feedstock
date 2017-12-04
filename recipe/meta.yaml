@@ -1,4 +1,4 @@
-{% set version = "3.3.16" %}
+{% set version = "3.4.9" %}
 
 package:
   name: rsgislib
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://bitbucket.org/petebunting/rsgislib/downloads/rsgislib-{{ version }}.tar.gz
-  sha256: 9f1166ac770621d3b4121ae4d6a851fefb0d8a4d8ad1e49c23e71aaf296c99d4
+  sha256: a271aee61395166542f3283fe899eff317ffb782f59ca90da0f008a203ebe5f3
 
 build:
-  number: 1
+  number: 0
   # CGAL etc do not support earlier than vc14
   skip: True  # [win and py<35]
   features:
