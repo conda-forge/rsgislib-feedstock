@@ -35,7 +35,7 @@ requirements:
     - vc  14  # [win and (py35 or py36)]
 
   run:
-    - hdf5 1.8.18|1.8.18.*
+    - hdf5 1.10.1|1.10.1.*
     - xerces-c 3.2.0
     - muparser
     - gsl 2.2.*
