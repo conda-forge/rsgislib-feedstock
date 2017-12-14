@@ -1,13 +1,12 @@
-{% set version = "3.3.16" %}
+{% set version = "3.4.9" %}
 
 package:
   name: rsgislib
   version: {{ version }}
 
 source:
-  fn: rsgislib-{{ version }}.tar.gz
   url: https://bitbucket.org/petebunting/rsgislib/downloads/rsgislib-{{ version }}.tar.gz
-  sha256: 9f1166ac770621d3b4121ae4d6a851fefb0d8a4d8ad1e49c23e71aaf296c99d4
+  sha256: a271aee61395166542f3283fe899eff317ffb782f59ca90da0f008a203ebe5f3
 
 build:
   number: 0
@@ -15,42 +14,39 @@ build:
   skip: True  # [win and py<35]
   features:
     - vc9  # [win and py27]
-    - vc10  # [win and py34]
     - vc14  # [win and (py35 or py36)]
 
 requirements:
   build:
     - cmake
     - toolchain
-    - hdf5 1.8.18|1.8.18.*
-    - xerces-c
+    - hdf5 1.10.1|1.10.1.*
+    - xerces-c 3.2.0
     - muparser
     - gsl 2.2.*
-    - geos 3.5.1
-    - gdal 2.1.*
-    - boost-cpp 1.64.*
+    - geos 3.6.2
+    - gdal 2.2.*
+    - boost-cpp 1.65.1
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
     - cgal
     - python
     - vc   9  # [win and py27]
-    - vc  10  # [win and py34]
     - vc  14  # [win and (py35 or py36)]
 
   run:
-    - hdf5 1.8.18|1.8.18.*
-    - xerces-c
+    - hdf5 1.10.1|1.10.1.*
+    - xerces-c 3.2.0
     - muparser
     - gsl 2.2.*
-    - geos 3.5.1
-    - gdal 2.1.*
-    - boost-cpp 1.64.*
+    - geos 3.6.2
+    - gdal 2.2.*
+    - boost-cpp 1.65.1
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
     - cgal
     - python
     - vc   9  # [win and py27]
-    - vc  10  # [win and py34]
     - vc  14  # [win and (py35 or py36)]
 
 test:
@@ -59,8 +55,8 @@ test:
   commands:
     - cd python_tests/RSGISLibTests && python RSGIStests.py --all
     # These are timming out :-(
-    # - conda inspect linkages -p $PREFIX rsgislib  # [not win]
-    # - conda inspect objects -p $PREFIX rsgislib  # [osx]
+    # - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    # - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
   imports:
     - rsgislib
     - rsgislib.imagecalibration
