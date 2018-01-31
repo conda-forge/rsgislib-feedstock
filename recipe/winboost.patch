@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2018-01-31 14:56:55.446089700 +1000
++++ CMakeLists.txt	2018-01-31 14:57:20.071318100 +1000
+@@ -313,15 +313,15 @@
+ include_directories(${BOOST_INCLUDE_DIR})
+ if (MSVC)
+     # Under Windows, the boost libs are strangely named - use glob to find them
+-    file(GLOB BOOST_FS_LIB ${BOOST_LIB_PATH}/libboost_filesystem-${MSVC_STRING}-*.lib )
++    file(GLOB BOOST_FS_LIB ${BOOST_LIB_PATH}/libboost_filesystem.lib )
+     if(NOT BOOST_FS_LIB)
+         message(FATAL_ERROR "Could not find boost_filesystem lib")
+     endif()
+-    file(GLOB BOOST_SYS_LIB ${BOOST_LIB_PATH}/libboost_system-${MSVC_STRING}-*.lib )
++    file(GLOB BOOST_SYS_LIB ${BOOST_LIB_PATH}/libboost_system.lib )
+     if(NOT BOOST_SYS_LIB)
+         message(FATAL_ERROR "Could not find boost_system lib")
+     endif()
+-    file(GLOB BOOST_DT_LIB ${BOOST_LIB_PATH}/libboost_date_time-${MSVC_STRING}-*.lib )
++    file(GLOB BOOST_DT_LIB ${BOOST_LIB_PATH}/libboost_date_time.lib )
+     if(NOT BOOST_DT_LIB)
+         message(FATAL_ERROR "Could not find boost_date_time lib")
+     endif()

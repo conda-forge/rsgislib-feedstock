@@ -7,6 +7,9 @@ package:
 source:
   url: https://bitbucket.org/petebunting/rsgislib/downloads/rsgislib-{{ version }}.tar.gz
   sha256: a271aee61395166542f3283fe899eff317ffb782f59ca90da0f008a203ebe5f3
+  patches:
+    # boost libs have changed their names recently
+    - winboost.patch  # [win]
 
 build:
   number: 1
