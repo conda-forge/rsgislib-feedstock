@@ -7,9 +7,12 @@ package:
 source:
   url: https://bitbucket.org/petebunting/rsgislib/downloads/rsgislib-{{ version }}.tar.gz
   sha256: a271aee61395166542f3283fe899eff317ffb782f59ca90da0f008a203ebe5f3
+  patches:
+    # boost libs have changed their names recently
+    - winboost.patch  # [win]
 
 build:
-  number: 0
+  number: 1
   # CGAL etc do not support earlier than vc14
   skip: True  # [win and py<35]
   features:
@@ -26,7 +29,7 @@ requirements:
     - gsl 2.2.*
     - geos 3.6.2
     - gdal 2.2.*
-    - boost-cpp 1.65.1
+    - boost-cpp 1.66.0
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
     - cgal
@@ -41,7 +44,7 @@ requirements:
     - gsl 2.2.*
     - geos 3.6.2
     - gdal 2.2.*
-    - boost-cpp 1.65.1
+    - boost-cpp 1.66.0
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
     - cgal
