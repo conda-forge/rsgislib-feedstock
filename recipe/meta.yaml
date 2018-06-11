@@ -1,4 +1,4 @@
-{% set version = "3.4.9" %}
+{% set version = "3.5.7" %}
 
 package:
   name: rsgislib
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://bitbucket.org/petebunting/rsgislib/downloads/rsgislib-{{ version }}.tar.gz
-  sha256: a271aee61395166542f3283fe899eff317ffb782f59ca90da0f008a203ebe5f3
+  sha256: 546c9c930faee49976c93bf42be927c57be053795585c8746bb824ae58206a5b
   patches:
     # boost libs have changed their names recently
     - winboost.patch  # [win]
