@@ -36,6 +36,7 @@ requirements:
     - python
     - vc   9  # [win and py27]
     - vc  14  # [win and (py35 or py36)]
+    - libstdcxx-ng # [linux]
 
   run:
     - hdf5 1.10.1|1.10.1.*
@@ -51,6 +52,7 @@ requirements:
     - python
     - vc   9  # [win and py27]
     - vc  14  # [win and (py35 or py36)]
+    - libstdcxx-ng # [linux]
 
 test:
   source_files:
