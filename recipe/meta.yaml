@@ -1,4 +1,4 @@
-{% set version = "3.4.9" %}
+{% set version = "3.5.7" %}
 
 package:
   name: rsgislib
@@ -6,13 +6,13 @@ package:
 
 source:
   url: https://bitbucket.org/petebunting/rsgislib/downloads/rsgislib-{{ version }}.tar.gz
-  sha256: a271aee61395166542f3283fe899eff317ffb782f59ca90da0f008a203ebe5f3
+  sha256: 546c9c930faee49976c93bf42be927c57be053795585c8746bb824ae58206a5b
   patches:
     # boost libs have changed their names recently
     - winboost.patch  # [win]
 
 build:
-  number: 1
+  number: 2
   # CGAL etc do not support earlier than vc14
   skip: True  # [win and py<35]
   features:
@@ -36,6 +36,7 @@ requirements:
     - python
     - vc   9  # [win and py27]
     - vc  14  # [win and (py35 or py36)]
+    - libstdcxx-ng  # [linux]
 
   run:
     - hdf5 1.10.1|1.10.1.*
@@ -53,6 +54,8 @@ requirements:
     - vc  14  # [win and (py35 or py36)]
 
 test:
+  requires:
+    - libstdcxx-ng  # [linux]
   source_files:
     - python_tests
   commands:
