@@ -52,9 +52,10 @@ requirements:
     - python
     - vc   9  # [win and py27]
     - vc  14  # [win and (py35 or py36)]
-    - libstdcxx-ng  # [linux]
 
 test:
+  requires:
+    - libstdcxx-ng  # [linux]
   source_files:
     - python_tests
   commands:
