@@ -12,7 +12,7 @@ source:
     - winboost.patch  # [win]
 
 build:
-  number: 2
+  number: 3
   # CGAL etc do not support earlier than vc14
   skip: True  # [win and py<35]
   features:
@@ -36,8 +36,6 @@ requirements:
     - python
     - vc   9  # [win and py27]
     - vc  14  # [win and (py35 or py36)]
-    - libstdcxx-ng  # [linux]
-
   run:
     - hdf5 1.10.1|1.10.1.*
     - xerces-c 3.2.0
@@ -54,8 +52,6 @@ requirements:
     - vc  14  # [win and (py35 or py36)]
 
 test:
-  requires:
-    - libstdcxx-ng  # [linux]
   source_files:
     - python_tests
   commands:
