@@ -28,7 +28,7 @@ requirements:
     - muparser
     - gsl 2.4.*
     - geos 3.6.2
-    - gdal 2.1.3
+    - gdal 2.2.4
     - boost-cpp 1.66.0
     - kealib 1.4.7
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
@@ -42,7 +42,7 @@ requirements:
     - muparser
     - gsl 2.4.*
     - geos 3.6.2
-    - gdal 2.1.3
+    - gdal 2.2.4
     - boost-cpp 1.66.0
     - kealib 1.4.7
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
