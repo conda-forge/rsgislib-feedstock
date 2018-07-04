@@ -30,7 +30,7 @@ requirements:
     - geos 3.6.2
     - gdal 2.2.4
     - boost-cpp 1.66.0
-    - kealib 1.4.9
+    - kealib 1.4.7
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
     - cgal
     - python
@@ -44,7 +44,7 @@ requirements:
     - geos 3.6.2
     - gdal 2.2.4
     - boost-cpp 1.66.0
-    - kealib 1.4.9
+    - kealib 1.4.7
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
     - cgal
     - python
