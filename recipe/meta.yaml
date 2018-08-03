@@ -1,4 +1,4 @@
-{% set version = "3.5.7" %}
+{% set version = "3.5.8" %}
 
 package:
   name: rsgislib
@@ -6,13 +6,13 @@ package:
 
 source:
   url: https://bitbucket.org/petebunting/rsgislib/downloads/rsgislib-{{ version }}.tar.gz
-  sha256: 546c9c930faee49976c93bf42be927c57be053795585c8746bb824ae58206a5b
+  sha256: 66e7abe2977d1e3a9de6dc667c8ba666666ca365d49f3b473748afd0d75270ff
   patches:
     # boost libs have changed their names recently
     - winboost.patch  # [win]
 
 build:
-  number: 3
+  number: 0
   # CGAL etc do not support earlier than vc14
   skip: True  # [win and py<35]
   features:
@@ -23,30 +23,28 @@ requirements:
   build:
     - cmake
     - toolchain
-    - hdf5 1.10.1|1.10.1.*
-    - xerces-c 3.2.0
+    - hdf5 1.10.*
+    - xerces-c 3.2.*
     - muparser
-    - gsl 2.2.*
+    - gsl 2.4
     - geos 3.6.2
-    - gdal 2.2.*
-    - boost-cpp 1.66.0
-    - kealib
-    # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
-    - cgal
+    - gdal 2.3.*
+    - boost-cpp 1.67.*
+    - kealib 1.4.*
+    - cgal 4.12
     - python
     - vc   9  # [win and py27]
     - vc  14  # [win and (py35 or py36)]
   run:
-    - hdf5 1.10.1|1.10.1.*
-    - xerces-c 3.2.0
+    - hdf5 1.10.*
+    - xerces-c 3.2.*
     - muparser
-    - gsl 2.2.*
+    - gsl 2.4
     - geos 3.6.2
-    - gdal 2.2.*
-    - boost-cpp 1.66.0
-    - kealib
-    # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
-    - cgal
+    - gdal 2.3.*
+    - boost-cpp 1.67.*
+    - kealib 1.4.*
+    - cgal 4.12
     - python
     - vc   9  # [win and py27]
     - vc  14  # [win and (py35 or py36)]
