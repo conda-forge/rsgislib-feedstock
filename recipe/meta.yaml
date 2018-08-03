@@ -29,7 +29,7 @@ requirements:
     - gsl 2.4
     - geos 3.6.2
     - gdal 2.3.*
-    - boost-cpp 1.67.*
+    - boost-cpp 1.66.*
     - kealib 1.4.*
     - cgal 4.12
     - python
@@ -42,7 +42,7 @@ requirements:
     - gsl 2.4
     - geos 3.6.2
     - gdal 2.3.*
-    - boost-cpp 1.67.*
+    - boost-cpp 1.66.*
     - kealib 1.4.*
     - cgal 4.12
     - python
