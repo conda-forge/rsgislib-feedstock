@@ -14,14 +14,16 @@ Summary: The Remote Sensing and GIS software library (RSGISLib) is a collection 
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/rsgislib-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/rsgislib-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/rsgislib-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/rsgislib-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/rsgislib-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/rsgislib-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/rsgislib-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/rsgislib-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/rsgislib-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/rsgislib-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/rsgislib-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/rsgislib-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/rsgislib/badges/version.svg)](https://anaconda.org/conda-forge/rsgislib)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/rsgislib/badges/downloads.svg)](https://anaconda.org/conda-forge/rsgislib)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-rsgislib-green.svg)](https://anaconda.org/conda-forge/rsgislib) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rsgislib.svg)](https://anaconda.org/conda-forge/rsgislib) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rsgislib.svg)](https://anaconda.org/conda-forge/rsgislib) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rsgislib.svg)](https://anaconda.org/conda-forge/rsgislib) |
 
 Installing rsgislib
 ===================
