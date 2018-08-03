@@ -22,7 +22,7 @@ build:
 requirements:
   build:
     - cmake
-    - toolchain
+    - {{ compiler('cxx') }}
     - hdf5 1.10.*
     - xerces-c 3.2.*
     - muparser
