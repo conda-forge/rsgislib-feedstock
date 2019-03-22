@@ -9,8 +9,7 @@ if [ `uname` == Darwin ]; then
 fi
 
 cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
-    -D PYTHON_EXE=$PYTHON \
-    -D INSTALL_PYTHON_USING_PREFIX=OFF \
+    -D CMAKE_PREFIX_PATH=$PREFIX \
     -D BOOST_INCLUDE_DIR=$PREFIX/include \
     -D BOOST_LIB_PATH=$PREFIX/lib \
     -D GDAL_INCLUDE_DIR=$PREFIX/include \
