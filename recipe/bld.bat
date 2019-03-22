@@ -1,4 +1,7 @@
 
+mkdir build
+cd build
+
 cmake -G "NMake Makefiles" -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -D CMAKE_BUILD_TYPE=Release ^
     -D INSTALL_PYTHON_USING_PREFIX=OFF ^
@@ -25,7 +28,7 @@ cmake -G "NMake Makefiles" -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -D MPFR_LIB_PATH=%LIBRARY_LIB% ^
     -D KEA_INCLUDE_DIR=%LIBRARY_INC% ^
     -D KEA_LIB_PATH=%LIBRARY_LIB% ^
-    .
+    ..
 if errorlevel 1 exit 1
 
 nmake
