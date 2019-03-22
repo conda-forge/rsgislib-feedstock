@@ -9,6 +9,7 @@ if [ `uname` == Darwin ]; then
 fi
 
 cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
+    -D Python_ROOT_DIR=$PREFIX \
     -D CMAKE_PREFIX_PATH=$PREFIX \
     -D BOOST_INCLUDE_DIR=$PREFIX/include \
     -D BOOST_LIB_PATH=$PREFIX/lib \
