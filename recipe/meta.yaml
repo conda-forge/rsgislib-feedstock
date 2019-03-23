@@ -7,6 +7,9 @@ package:
 source:
   url: https://bitbucket.org/petebunting/rsgislib/downloads/rsgislib-{{ version }}.tar.gz
   sha256: f301fc88855bd55eaaef6386dbec9290dcdf74c93b2e74ef3f9311d887b78c82
+  patches:
+    # Seem to need this patch so the proper includes are used
+    - geosinline.patch
 
 build:
   number: 0
