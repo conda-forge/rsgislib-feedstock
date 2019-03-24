@@ -10,6 +10,7 @@ source:
   patches:
     # Seem to need this patch so the proper includes are used
     - geosinline.patch
+    - osxpythonlinking.patch  # [osx]
 
 build:
   number: 0

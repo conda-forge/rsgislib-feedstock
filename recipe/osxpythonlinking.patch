@@ -1,0 +1,145 @@
+--- python/CMakeLists.txt.old	2019-03-25 09:22:53.426706152 +1000
++++ python/CMakeLists.txt	2019-03-25 09:22:34.026451571 +1000
+@@ -37,6 +37,10 @@
+ if(MSVC)
+     set_target_properties(_imagecalc PROPERTIES SUFFIX ".pyd")
+ endif(MSVC)
++if(APPLE)
++    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
++    set_target_properties(_imagecalc PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++endif(APPLE)
+ 
+ install(TARGETS _imagecalc DESTINATION "${PYRSGIS_INSTALL_PATH}/imagecalc")
+ 
+@@ -47,6 +51,10 @@
+ if(MSVC)
+     set_target_properties(_imageutils PROPERTIES SUFFIX ".pyd")
+ endif(MSVC)
++if(APPLE)
++    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
++    set_target_properties(_imageutils PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++endif(APPLE)
+ 
+ install(TARGETS _imageutils DESTINATION "${PYRSGIS_INSTALL_PATH}/imageutils")
+ 
+@@ -57,6 +65,10 @@
+ if(MSVC)
+     set_target_properties(_segmentation PROPERTIES SUFFIX ".pyd")
+ endif(MSVC)
++if(APPLE)
++    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
++    set_target_properties(_segmentation PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++endif(APPLE)
+ 
+ install(TARGETS _segmentation DESTINATION "${PYRSGIS_INSTALL_PATH}/segmentation")
+ 
+@@ -67,6 +79,10 @@
+ if(MSVC)
+     set_target_properties(_imagecalibration PROPERTIES SUFFIX ".pyd")
+ endif(MSVC)
++if(APPLE)
++    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
++    set_target_properties(_imagecalibration PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++endif(APPLE)
+ 
+ install(TARGETS _imagecalibration DESTINATION "${PYRSGIS_INSTALL_PATH}/imagecalibration")
+ 
+@@ -77,6 +93,10 @@
+ if(MSVC)
+     set_target_properties(_rastergis PROPERTIES SUFFIX ".pyd")
+ endif(MSVC)
++if(APPLE)
++    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
++    set_target_properties(_rastergis PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++endif(APPLE)
+ 
+ install(TARGETS _rastergis DESTINATION "${PYRSGIS_INSTALL_PATH}/rastergis")
+ 
+@@ -87,6 +107,10 @@
+ if(MSVC)
+     set_target_properties(_zonalstats PROPERTIES SUFFIX ".pyd")
+ endif(MSVC)
++if(APPLE)
++    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
++    set_target_properties(_zonalstats PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++endif(APPLE)
+ 
+ install(TARGETS _zonalstats DESTINATION "${PYRSGIS_INSTALL_PATH}/zonalstats")
+ 
+@@ -97,6 +121,10 @@
+ if(MSVC)
+     set_target_properties(_imageregistration PROPERTIES SUFFIX ".pyd")
+ endif(MSVC)
++if(APPLE)
++    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
++    set_target_properties(_imageregistration PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++endif(APPLE)
+ 
+ install(TARGETS _imageregistration DESTINATION "${PYRSGIS_INSTALL_PATH}/imageregistration")
+ 
+@@ -107,6 +135,10 @@
+ if(MSVC)
+     set_target_properties(_vectorutils PROPERTIES SUFFIX ".pyd")
+ endif(MSVC)
++if(APPLE)
++    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
++    set_target_properties(_vectorutils PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++endif(APPLE)
+ 
+ install(TARGETS _vectorutils DESTINATION "${PYRSGIS_INSTALL_PATH}/vectorutils")
+ 
+@@ -117,6 +149,10 @@
+ if(MSVC)
+     set_target_properties(_imagefilter PROPERTIES SUFFIX ".pyd")
+ endif(MSVC)
++if(APPLE)
++    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
++    set_target_properties(_imagefilter PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++endif(APPLE)
+ 
+ install(TARGETS _imagefilter DESTINATION "${PYRSGIS_INSTALL_PATH}/imagefilter")
+ 
+@@ -127,6 +163,10 @@
+ if(MSVC)
+     set_target_properties(_classification PROPERTIES SUFFIX ".pyd")
+ endif(MSVC)
++if(APPLE)
++    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
++    set_target_properties(_classification PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++endif(APPLE)
+ 
+ install(TARGETS _classification DESTINATION "${PYRSGIS_INSTALL_PATH}/classification")
+ 
+@@ -137,6 +177,10 @@
+ if(MSVC)
+     set_target_properties(_elevation PROPERTIES SUFFIX ".pyd")
+ endif(MSVC)
++if(APPLE)
++    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
++    set_target_properties(_elevation PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++endif(APPLE)
+ 
+ install(TARGETS _elevation DESTINATION "${PYRSGIS_INSTALL_PATH}/elevation")
+ 
+@@ -147,6 +191,10 @@
+ if(MSVC)
+     set_target_properties(_imagemorphology PROPERTIES SUFFIX ".pyd")
+ endif(MSVC)
++if(APPLE)
++    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
++    set_target_properties(_imagemorphology PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++endif(APPLE)
+ 
+ install(TARGETS _imagemorphology DESTINATION "${PYRSGIS_INSTALL_PATH}/imagemorphology")
+ 
+@@ -157,6 +205,10 @@
+ if(MSVC)
+     set_target_properties(_histocube PROPERTIES SUFFIX ".pyd")
+ endif(MSVC)
++if(APPLE)
++    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
++    set_target_properties(_histocube PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++endif(APPLE)
+ 
+ install(TARGETS _histocube DESTINATION "${PYRSGIS_INSTALL_PATH}/histocube")
+ 
