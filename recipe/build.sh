@@ -3,13 +3,9 @@
 mkdir build
 cd build
 
-if [ `uname` == Darwin ]; then
-    # needed otherwise linking fails
-    export DYLD_FALLBACK_LIBRARY_PATH=$PREFIX/lib
-fi
-
 cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
     -D Python_ROOT_DIR=$PREFIX \
+    -D CMAKE_FIND_FRAMEWORK=NEVER \
     -D CMAKE_PREFIX_PATH=$PREFIX \
     -D BOOST_INCLUDE_DIR=$PREFIX/include \
     -D BOOST_LIB_PATH=$PREFIX/lib \
