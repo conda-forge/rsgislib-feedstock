@@ -1,145 +1,186 @@
 --- python/CMakeLists.txt.old	2019-03-25 09:22:53.426706152 +1000
-+++ python/CMakeLists.txt	2019-03-25 09:22:34.026451571 +1000
-@@ -37,6 +37,10 @@
- if(MSVC)
-     set_target_properties(_imagecalc PROPERTIES SUFFIX ".pyd")
- endif(MSVC)
++++ python/CMakeLists.txt	2019-03-25 12:30:05.682074175 +1000
+@@ -32,7 +32,13 @@
+ 
+ # _imagecalc
+ add_library(_imagecalc SHARED src/imagecalc.cpp)
+-target_link_libraries(_imagecalc ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +if(APPLE)
 +    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
 +    set_target_properties(_imagecalc PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    target_link_libraries(_imagecalc ${RSGISLIB_CMDSINTERFACE_LIB_NAME}) 
++else()
++    target_link_libraries(_imagecalc ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +endif(APPLE)
+ set_target_properties(_imagecalc PROPERTIES PREFIX "")
+ if(MSVC)
+     set_target_properties(_imagecalc PROPERTIES SUFFIX ".pyd")
+@@ -42,7 +48,12 @@
  
- install(TARGETS _imagecalc DESTINATION "${PYRSGIS_INSTALL_PATH}/imagecalc")
- 
-@@ -47,6 +51,10 @@
+ # _imageutils
+ add_library(_imageutils SHARED src/imageutils.cpp)
+-target_link_libraries(_imageutils ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
++if(APPLE)
++    set_target_properties(_imageutils PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    target_link_libraries(_imageutils ${RSGISLIB_CMDSINTERFACE_LIB_NAME}) 
++else()
++    target_link_libraries(_imageutils ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
++endif(APPLE)
+ set_target_properties(_imageutils PROPERTIES PREFIX "")
  if(MSVC)
      set_target_properties(_imageutils PROPERTIES SUFFIX ".pyd")
- endif(MSVC)
+@@ -52,7 +63,12 @@
+ 
+ # _segmentation
+ add_library(_segmentation SHARED src/segmentation.cpp)
+-target_link_libraries(_segmentation ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +if(APPLE)
-+    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
-+    set_target_properties(_imageutils PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    set_target_properties(_segmentation PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    target_link_libraries(_segmentation ${RSGISLIB_CMDSINTERFACE_LIB_NAME}) 
++else()
++    target_link_libraries(_segmentation ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +endif(APPLE)
- 
- install(TARGETS _imageutils DESTINATION "${PYRSGIS_INSTALL_PATH}/imageutils")
- 
-@@ -57,6 +65,10 @@
+ set_target_properties(_segmentation PROPERTIES PREFIX "")
  if(MSVC)
      set_target_properties(_segmentation PROPERTIES SUFFIX ".pyd")
- endif(MSVC)
+@@ -62,7 +78,12 @@
+ 
+ # _segmentation
+ add_library(_imagecalibration SHARED src/imagecalibration.cpp)
+-target_link_libraries(_imagecalibration ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +if(APPLE)
-+    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
-+    set_target_properties(_segmentation PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    set_target_properties(_imagecalibration PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    target_link_libraries(_imagecalibration ${RSGISLIB_CMDSINTERFACE_LIB_NAME}) 
++else()
++    target_link_libraries(_imagecalibration ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +endif(APPLE)
- 
- install(TARGETS _segmentation DESTINATION "${PYRSGIS_INSTALL_PATH}/segmentation")
- 
-@@ -67,6 +79,10 @@
+ set_target_properties(_imagecalibration PROPERTIES PREFIX "")
  if(MSVC)
      set_target_properties(_imagecalibration PROPERTIES SUFFIX ".pyd")
- endif(MSVC)
-+if(APPLE)
-+    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
-+    set_target_properties(_imagecalibration PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
-+endif(APPLE)
+@@ -72,7 +93,13 @@
  
- install(TARGETS _imagecalibration DESTINATION "${PYRSGIS_INSTALL_PATH}/imagecalibration")
- 
-@@ -77,6 +93,10 @@
- if(MSVC)
-     set_target_properties(_rastergis PROPERTIES SUFFIX ".pyd")
- endif(MSVC)
+ # _rastergis
+ add_library(_rastergis SHARED src/rastergis.cpp)
+-target_link_libraries(_rastergis ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +if(APPLE)
 +    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
 +    set_target_properties(_rastergis PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    target_link_libraries(_rastergis ${RSGISLIB_CMDSINTERFACE_LIB_NAME}) 
++else()
++    target_link_libraries(_rastergis ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +endif(APPLE)
+ set_target_properties(_rastergis PROPERTIES PREFIX "")
+ if(MSVC)
+     set_target_properties(_rastergis PROPERTIES SUFFIX ".pyd")
+@@ -82,7 +109,12 @@
  
- install(TARGETS _rastergis DESTINATION "${PYRSGIS_INSTALL_PATH}/rastergis")
- 
-@@ -87,6 +107,10 @@
+ # _zonalstats
+ add_library(_zonalstats SHARED src/zonalstats.cpp)
+-target_link_libraries(_zonalstats ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
++if(APPLE)
++    set_target_properties(_zonalstats PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    target_link_libraries(_zonalstats ${RSGISLIB_CMDSINTERFACE_LIB_NAME}) 
++else()
++    target_link_libraries(_zonalstats ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
++endif(APPLE)
+ set_target_properties(_zonalstats PROPERTIES PREFIX "")
  if(MSVC)
      set_target_properties(_zonalstats PROPERTIES SUFFIX ".pyd")
- endif(MSVC)
+@@ -92,7 +124,12 @@
+ 
+ # _imageregistration
+ add_library(_imageregistration SHARED src/imageregistration.cpp)
+-target_link_libraries(_imageregistration ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +if(APPLE)
-+    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
-+    set_target_properties(_zonalstats PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    set_target_properties(_imageregistration PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    target_link_libraries(_imageregistration ${RSGISLIB_CMDSINTERFACE_LIB_NAME}) 
++else()
++    target_link_libraries(_imageregistration ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +endif(APPLE)
- 
- install(TARGETS _zonalstats DESTINATION "${PYRSGIS_INSTALL_PATH}/zonalstats")
- 
-@@ -97,6 +121,10 @@
+ set_target_properties(_imageregistration PROPERTIES PREFIX "")
  if(MSVC)
      set_target_properties(_imageregistration PROPERTIES SUFFIX ".pyd")
- endif(MSVC)
+@@ -102,7 +139,12 @@
+ 
+ # _vectorutils
+ add_library(_vectorutils SHARED src/vectorutils.cpp)
+-target_link_libraries(_vectorutils ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +if(APPLE)
-+    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
-+    set_target_properties(_imageregistration PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    set_target_properties(_vectorutils PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    target_link_libraries(_vectorutils ${RSGISLIB_CMDSINTERFACE_LIB_NAME}) 
++else()
++    target_link_libraries(_vectorutils ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +endif(APPLE)
- 
- install(TARGETS _imageregistration DESTINATION "${PYRSGIS_INSTALL_PATH}/imageregistration")
- 
-@@ -107,6 +135,10 @@
+ set_target_properties(_vectorutils PROPERTIES PREFIX "")
  if(MSVC)
      set_target_properties(_vectorutils PROPERTIES SUFFIX ".pyd")
- endif(MSVC)
+@@ -112,7 +154,12 @@
+ 
+ # _imagefilter
+ add_library(_imagefilter SHARED src/imagefilter.cpp)
+-target_link_libraries(_imagefilter ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +if(APPLE)
-+    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
-+    set_target_properties(_vectorutils PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    set_target_properties(_imagefilter PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    target_link_libraries(_imagefilter ${RSGISLIB_CMDSINTERFACE_LIB_NAME}) 
++else()
++    target_link_libraries(_imagefilter ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +endif(APPLE)
- 
- install(TARGETS _vectorutils DESTINATION "${PYRSGIS_INSTALL_PATH}/vectorutils")
- 
-@@ -117,6 +149,10 @@
+ set_target_properties(_imagefilter PROPERTIES PREFIX "")
  if(MSVC)
      set_target_properties(_imagefilter PROPERTIES SUFFIX ".pyd")
- endif(MSVC)
+@@ -122,7 +169,12 @@
+ 
+ # _classification
+ add_library(_classification SHARED src/classification.cpp)
+-target_link_libraries(_classification ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +if(APPLE)
-+    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
-+    set_target_properties(_imagefilter PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    set_target_properties(_classification PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    target_link_libraries(_classification ${RSGISLIB_CMDSINTERFACE_LIB_NAME}) 
++else()
++    target_link_libraries(_classification ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +endif(APPLE)
- 
- install(TARGETS _imagefilter DESTINATION "${PYRSGIS_INSTALL_PATH}/imagefilter")
- 
-@@ -127,6 +163,10 @@
+ set_target_properties(_classification PROPERTIES PREFIX "")
  if(MSVC)
      set_target_properties(_classification PROPERTIES SUFFIX ".pyd")
- endif(MSVC)
+@@ -132,7 +184,12 @@
+ 
+ # _elevation
+ add_library(_elevation SHARED src/elevation.cpp)
+-target_link_libraries(_elevation ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +if(APPLE)
-+    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
-+    set_target_properties(_classification PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    set_target_properties(_elevation PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    target_link_libraries(_elevation ${RSGISLIB_CMDSINTERFACE_LIB_NAME}) 
++else()
++    target_link_libraries(_elevation ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +endif(APPLE)
- 
- install(TARGETS _classification DESTINATION "${PYRSGIS_INSTALL_PATH}/classification")
- 
-@@ -137,6 +177,10 @@
+ set_target_properties(_elevation PROPERTIES PREFIX "")
  if(MSVC)
      set_target_properties(_elevation PROPERTIES SUFFIX ".pyd")
- endif(MSVC)
+@@ -142,7 +199,12 @@
+ 
+ # _imagemorphology
+ add_library(_imagemorphology SHARED src/imagemorphology.cpp)
+-target_link_libraries(_imagemorphology ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +if(APPLE)
-+    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
-+    set_target_properties(_elevation PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    set_target_properties(_imagemorphology PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    target_link_libraries(_imagemorphology ${RSGISLIB_CMDSINTERFACE_LIB_NAME}) 
++else()
++    target_link_libraries(_imagemorphology ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +endif(APPLE)
- 
- install(TARGETS _elevation DESTINATION "${PYRSGIS_INSTALL_PATH}/elevation")
- 
-@@ -147,6 +191,10 @@
+ set_target_properties(_imagemorphology PROPERTIES PREFIX "")
  if(MSVC)
      set_target_properties(_imagemorphology PROPERTIES SUFFIX ".pyd")
- endif(MSVC)
+@@ -152,7 +214,12 @@
+ 
+ # _histocube
+ add_library(_histocube SHARED src/histocube.cpp)
+-target_link_libraries(_histocube ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +if(APPLE)
-+    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
-+    set_target_properties(_imagemorphology PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    set_target_properties(_histocube PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
++    target_link_libraries(_histocube ${RSGISLIB_CMDSINTERFACE_LIB_NAME}) 
++else()
++    target_link_libraries(_histocube ${RSGISLIB_CMDSINTERFACE_LIB_NAME} ${Python_LIBRARIES}) 
 +endif(APPLE)
- 
- install(TARGETS _imagemorphology DESTINATION "${PYRSGIS_INSTALL_PATH}/imagemorphology")
- 
-@@ -157,6 +205,10 @@
+ set_target_properties(_histocube PROPERTIES PREFIX "")
  if(MSVC)
      set_target_properties(_histocube PROPERTIES SUFFIX ".pyd")
- endif(MSVC)
-+if(APPLE)
-+    # see https://blog.tim-smith.us/2015/09/python-extension-modules-os-x/
-+    set_target_properties(_histocube PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
-+endif(APPLE)
- 
- install(TARGETS _histocube DESTINATION "${PYRSGIS_INSTALL_PATH}/histocube")
- 
