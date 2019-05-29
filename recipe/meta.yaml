@@ -13,7 +13,7 @@ source:
     - osxpythonlinking.patch  # [osx]
 
 build:
-  number: 0
+  number: 1
   # CGAL etc do not support earlier than vc14
   skip: True  # [win and py<35]
 
