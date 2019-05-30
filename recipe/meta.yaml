@@ -13,7 +13,7 @@ source:
     - osxpythonlinking.patch  # [osx]
 
 build:
-  number: 0
+  number: 1
   # CGAL etc do not support earlier than vc14
   skip: True  # [win and py<35]
 
@@ -32,7 +32,7 @@ requirements:
     - boost-cpp
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
-    - cgal
+    - cgal-cpp
     - python
   run:
     - hdf5
@@ -44,7 +44,7 @@ requirements:
     - boost-cpp
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
-    - cgal
+    - cgal-cpp
     - python
 
 test:
