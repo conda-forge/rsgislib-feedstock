@@ -21,7 +21,7 @@ geos:
 gsl:
 - '2.4'
 hdf5:
-- 1.10.4
+- 1.10.5
 kealib:
 - 1.4.10
 macos_machine:
