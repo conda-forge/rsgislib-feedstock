@@ -9,7 +9,7 @@ channel_targets:
 cxx_compiler:
 - vs2015
 gdal:
-- '2.4'
+- '3.0'
 geos:
 - 3.7.2
 gsl:
