@@ -15,7 +15,7 @@ cxx_compiler_version:
 docker_image:
 - condaforge/linux-anvil-comp7
 gdal:
-- '2.4'
+- '3.0'
 geos:
 - 3.7.2
 gsl:

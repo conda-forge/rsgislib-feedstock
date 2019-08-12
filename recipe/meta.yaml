@@ -13,9 +13,9 @@ source:
     - osxpythonlinking.patch  # [osx]
 
 build:
-  number: 4
+  number: 5
   # CGAL etc do not support earlier than vc14
-  skip: True  # [win and py<35]
+  skip: True  # [win and vc<14]
 
 requirements:
   build:
@@ -23,6 +23,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
+    - python
     - hdf5
     - xerces-c
     - muparser
@@ -33,8 +34,8 @@ requirements:
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
     - cgal-cpp
-    - python
   run:
+    - python
     - hdf5
     - xerces-c
     - muparser
@@ -45,7 +46,6 @@ requirements:
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
     - cgal-cpp
-    - python
 
 test:
   source_files:
@@ -72,7 +72,7 @@ test:
 
 about:
   home: http://www.rsgislib.org
-  license: GPL3
+  license: GPL-3.0
   license_file: LICENSE.txt
   summary: The Remote Sensing and GIS software library (RSGISLib) is a collection of Python modules for processing remote sensing and GIS datasets.
 
