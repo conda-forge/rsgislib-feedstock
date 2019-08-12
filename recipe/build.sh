@@ -2,9 +2,17 @@
 
 mkdir build && cd build
 
+if [[ ${PY3K} == '1' ]]; then
+  export Python_ROOT_DIR="-D Python3_ROOT_DIR:FILEPATH=${PREFIX}"
+  export Python_FIND_STRATEGY="-D Python3_FIND_STRATEGY=LOCATION"
+else
+  export Python_ROOT_DIR="-D Python_ROOT_DIR:FILEPATH=${PREFIX}"
+  export Python_FIND_STRATEGY="-D Python_FIND_STRATEGY=LOCATION"
+fi
+
 cmake -D CMAKE_INSTALL_PREFIX=${PREFIX} \
-    -D Python_ROOT_DIR:FILEPATH=${PREFIX} \
-    -D Python_FIND_STRATEGY="LOCATION" \
+    ${Python_ROOT_DIR} \
+    ${Python_FIND_STRATEGY} \
     -D CMAKE_FIND_FRAMEWORK=NEVER \
     -D CMAKE_PREFIX_PATH=${PREFIX} \
     -D BOOST_INCLUDE_DIR=${PREFIX}/include \
