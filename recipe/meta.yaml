@@ -1,4 +1,4 @@
-{% set version = "3.6.14" %}
+{% set version = "4.0.0" %}
 
 package:
   name: rsgislib
@@ -6,14 +6,10 @@ package:
 
 source:
   url: https://bitbucket.org/petebunting/rsgislib/downloads/rsgislib-{{ version }}.tar.gz
-  sha256: f301fc88855bd55eaaef6386dbec9290dcdf74c93b2e74ef3f9311d887b78c82
-  patches:
-    # Seem to need this patch so the proper includes are used
-    - geosinline.patch
-    - osxpythonlinking.patch  # [osx]
+  sha256: da48d152512a09f7752b12baede5f7d4f352d2129b3eba164f70f83dedcdd50b
 
 build:
-  number: 5
+  number: 1
   # CGAL etc do not support earlier than vc14
   skip: True  # [win and vc<14]
 
@@ -29,7 +25,7 @@ requirements:
     - muparser
     - gsl
     - geos
-    - gdal
+    - gdal >=3.0.1
     - boost-cpp
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
@@ -41,7 +37,7 @@ requirements:
     - muparser
     - gsl
     - geos
-    - gdal
+    - gdal >=3.0.1
     - boost-cpp
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
