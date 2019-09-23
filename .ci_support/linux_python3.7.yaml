@@ -14,8 +14,6 @@ cxx_compiler_version:
 - '7'
 docker_image:
 - condaforge/linux-anvil-comp7
-gdal:
-- '3.0'
 geos:
 - 3.7.2
 gsl:
@@ -27,8 +25,6 @@ kealib:
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
-  gdal:
-    max_pin: x.x
   kealib:
     max_pin: x.x
   python:
