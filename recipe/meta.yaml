@@ -1,4 +1,4 @@
-{% set version = "4.0.0" %}
+{% set version = "4.0.1" %}
 
 package:
   name: rsgislib
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://bitbucket.org/petebunting/rsgislib/downloads/rsgislib-{{ version }}.tar.gz
-  sha256: d7da63950e15bde311cbed69bd75425b26ca0069f0328154965fd05d7744ea59
+  sha256: 09785d9327fc967a5c5bb76570fae8174336681bb23811301ee19a78f644f221
 
 build:
   number: 1
