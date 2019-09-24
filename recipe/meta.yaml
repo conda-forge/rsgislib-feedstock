@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://bitbucket.org/petebunting/rsgislib/downloads/rsgislib-{{ version }}.tar.gz
-  sha256: 09785d9327fc967a5c5bb76570fae8174336681bb23811301ee19a78f644f221
+  sha256: 5fb1d5431c139fc1ebf30a0427be8bef78078f719bf5471bf78a20b7d322f395
 
 build:
   number: 1
