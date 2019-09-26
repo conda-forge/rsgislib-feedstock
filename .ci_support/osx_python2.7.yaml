@@ -14,8 +14,6 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '4'
-gdal:
-- '3.0'
 geos:
 - 3.7.2
 gsl:
@@ -31,8 +29,6 @@ macos_min_version:
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
-  gdal:
-    max_pin: x.x
   kealib:
     max_pin: x.x
   python:
