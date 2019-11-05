@@ -37,6 +37,6 @@ pin_run_as_build:
   xerces-c:
     max_pin: x.x.x
 python:
-- '2.7'
+- '3.8'
 xerces_c:
 - 3.2.2
