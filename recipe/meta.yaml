@@ -9,7 +9,7 @@ source:
   sha256: 692a69cb9498c8a30a566efe34edd579fd53dff01a891e299a93188205d0a0ab
 
 build:
-  number: 1
+  number: 2
   # CGAL etc do not support earlier than vc14
   skip: True  # [win and vc<14]
 
