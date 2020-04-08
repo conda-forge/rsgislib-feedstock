@@ -1,4 +1,4 @@
-{% set version = "4.1.93a" %}
+{% set version = "4.1.94a" %}
 
 package:
   name: rsgislib
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/remotesensinginfo/rsgislib/archive/{{ version }}.tar.gz
-  sha256: fb5b9c6e769ff30ee8188c6b3268797e418f0b8144905168c72911b0f93f11f7
+  sha256: 4eda2a9afdd6bd2a732d404e532f1d81f7292afa1e5ee2980fd4625dabff4424
 
 build:
   number: 1
@@ -30,7 +30,7 @@ requirements:
     - boost-cpp
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
-    - cgal-cpp 4.14
+    - cgal-cpp
     - tqdm
     - rios
   run:
@@ -45,7 +45,7 @@ requirements:
     - boost-cpp
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
-    - cgal-cpp 4.14
+    - cgal-cpp
     - tqdm
     - rios
 
