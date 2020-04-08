@@ -25,12 +25,12 @@ requirements:
     - xerces-c
     - muparser
     - gsl
-    - geos
+    - geos 3.7.2
     - gdal >=3.0.1
     - boost-cpp
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
-    - cgal-cpp
+    - cgal-cpp 4.14
     - tqdm
     - rios
   run:
