@@ -1,12 +1,12 @@
-{% set version = "4.0.6" %}
+{% set version = "4.1.95" %}
 
 package:
   name: rsgislib
   version: {{ version }}
 
 source:
-  url: https://bitbucket.org/petebunting/rsgislib/downloads/rsgislib-{{ version }}.tar.gz
-  sha256: 692a69cb9498c8a30a566efe34edd579fd53dff01a891e299a93188205d0a0ab
+  url: https://github.com/remotesensinginfo/rsgislib/archive/{{ version }}.tar.gz
+  sha256: e11a59205fc6209512a0a2a571eb409f2c8ae7899de95fd16f46f7e6482c1bd0
 
 build:
   number: 1
@@ -21,27 +21,33 @@ requirements:
   host:
     - python
     - hdf5
+    - h5py
     - xerces-c
     - muparser
     - gsl
-    - geos
+    - geos 3.7.2
     - gdal >=3.0.1
     - boost-cpp
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
-    - cgal-cpp
+    - cgal-cpp 4.14
+    - tqdm
+    - rios
   run:
     - python
     - hdf5
+    - h5py
     - xerces-c
     - muparser
     - gsl
-    - geos
+    - geos 3.7.2
     - gdal >=3.0.1
     - boost-cpp
     - kealib
     # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
-    - cgal-cpp
+    - cgal-cpp 4.14
+    - tqdm
+    - rios
 
 test:
   source_files:

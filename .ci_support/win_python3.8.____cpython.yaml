@@ -1,31 +1,19 @@
-MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
 boost_cpp:
 - 1.70.0
 c_compiler:
-- clang
-c_compiler_version:
-- '9'
+- vs2015
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- clangxx
-cxx_compiler_version:
-- '9'
-geos:
-- 3.7.2
+- vs2015
 gsl:
-- '2.5'
+- '2.6'
 hdf5:
 - 1.10.5
 kealib:
-- 1.4.10
-macos_machine:
-- x86_64-apple-darwin13.4.0
-macos_min_version:
-- '10.9'
+- '1.4'
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
@@ -34,9 +22,13 @@ pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
+  vc:
+    max_pin: x
   xerces-c:
     max_pin: x.x.x
 python:
-- '3.7'
+- 3.8.* *_cpython
+vc:
+- '14'
 xerces_c:
 - 3.2.2
