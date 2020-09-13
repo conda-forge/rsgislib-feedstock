@@ -1,5 +1,5 @@
 boost_cpp:
-- 1.70.0
+- 1.72.0
 c_compiler:
 - gcc
 c_compiler_version:
@@ -28,9 +28,9 @@ pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
-  xerces-c:
-    max_pin: x.x.x
 python:
-- 3.7.* *_cpython
+- 3.6.* *_cpython
+target_platform:
+- linux-64
 xerces_c:
-- 3.2.2
+- '3.2'
