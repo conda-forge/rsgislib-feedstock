@@ -1,7 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 boost_cpp:
-- 1.70.0
+- 1.72.0
 c_compiler:
 - clang
 c_compiler_version:
@@ -22,8 +22,6 @@ kealib:
 - '1.4'
 macos_machine:
 - x86_64-apple-darwin13.4.0
-macos_min_version:
-- '10.9'
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
@@ -38,3 +36,6 @@ target_platform:
 - osx-64
 xerces_c:
 - '3.2'
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version

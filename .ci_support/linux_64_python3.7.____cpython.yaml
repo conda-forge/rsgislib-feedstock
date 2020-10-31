@@ -1,9 +1,11 @@
 boost_cpp:
-- 1.70.0
+- 1.72.0
 c_compiler:
 - gcc
 c_compiler_version:
 - '7'
+cdt_name:
+- cos6
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -34,3 +36,6 @@ target_platform:
 - linux-64
 xerces_c:
 - '3.2'
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version

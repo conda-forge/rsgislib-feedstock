@@ -5,11 +5,9 @@ Home: http://www.rsgislib.org
 
 Package license: GPL-3.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/rsgislib-feedstock/blob/master/LICENSE.txt)
 
 Summary: The Remote Sensing and GIS software library (RSGISLib) is a collection of Python modules for processing remote sensing and GIS datasets.
-
-
 
 Current build status
 ====================
