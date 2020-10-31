@@ -3,7 +3,7 @@ About rsgislib
 
 Home: http://www.rsgislib.org
 
-Package license: GPL-3.0
+Package license: GPL-3.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/rsgislib-feedstock/blob/master/LICENSE.txt)
 
