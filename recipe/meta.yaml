@@ -78,7 +78,7 @@ test:
 
 about:
   home: http://www.rsgislib.org
-  license: GPL-3.0
+  license: GPL-3.0-or-later
   license_file: LICENSE.txt
   summary: The Remote Sensing and GIS software library (RSGISLib) is a collection of Python modules for processing remote sensing and GIS datasets.
 
