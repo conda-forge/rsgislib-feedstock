@@ -41,15 +41,7 @@ requirements:
 test:
   requires:
     - pytest
-    - geopandas
-    - scikit-learn
-    - scikit-image
-    - scikit-optimize
-    - imbalanced-learn
-    - matplotlib
     - scipy
-    - xgboost
-    - lightgbm
   source_files:
     - python_tests
   commands:
