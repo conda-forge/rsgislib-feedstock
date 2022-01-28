@@ -1,80 +1,84 @@
-{% set version = "4.1.95" %}
+{% set version = "5.0.2" %}
 
 package:
   name: rsgislib
   version: {{ version }}
 
 source:
-  url: https://github.com/remotesensinginfo/rsgislib/archive/{{ version }}.tar.gz
-  sha256: e11a59205fc6209512a0a2a571eb409f2c8ae7899de95fd16f46f7e6482c1bd0
+  url: https://github.com/remotesensinginfo/rsgislib/archive/refs/tags/{{ version }}.tar.gz
+  sha256: ef1ba2c67133b114b8f27893df96c510e0124283cf1b1f10b80b51f03df303f5
 
 build:
-  number: 1
-  # CGAL etc do not support earlier than vc14
-  skip: True  # [win and vc<14]
+  number: 0
 
 requirements:
   build:
     - cmake
+    - make  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - python
     - hdf5
-    - h5py
-    - xerces-c
     - muparser
     - gsl
-    - geos 3.7.2
-    - gdal >=3.0.1
+    - gdal
     - boost-cpp
     - kealib
-    # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
-    - cgal-cpp 4.14
     - tqdm
-    - rios
   run:
     - python
     - hdf5
     - h5py
-    - xerces-c
     - muparser
     - gsl
-    - geos 3.7.2
-    - gdal >=3.0.1
+    - gdal
     - boost-cpp
     - kealib
-    # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
-    - cgal-cpp 4.14
     - tqdm
     - rios
 
 test:
+  requires:
+    - pytest
+    - geopandas
+    - scikit-learn
+    - scikit-image
+    - scikit-optimize
+    - imbalanced-learn
+    - matplotlib
+    - scipy
+    - xgboost
+    - lightgbm
   source_files:
     - python_tests
   commands:
-    # Random crashing under Windows. Skip for now
-    - cd python_tests/RSGISLibTests && python RSGIStests.py --all  # [not win]
+    - pytest python_tests
   imports:
     - rsgislib
-    - rsgislib.imagecalibration
+    - rsgislib.changedetect
     - rsgislib.classification
     - rsgislib.elevation
     - rsgislib.imagecalc
+    - rsgislib.imagecalibration
     - rsgislib.imagefilter
+    - rsgislib.imagemorphology
     - rsgislib.imageregistration
     - rsgislib.imageutils
     - rsgislib.rastergis
+    - rsgislib.regression
     - rsgislib.segmentation
+    - rsgislib.timeseries
+    - rsgislib.tools
+    - rsgislib.vectorattrs
+    - rsgislib.vectorgeoms
     - rsgislib.vectorutils
     - rsgislib.zonalstats
-    # get a memory error here - must investigate
-    #- rsgislib.histocube
-    - rsgislib.imagemorphology
+    
 
 about:
   home: http://www.rsgislib.org
-  license: GPL-3.0
+  license: GPL-3.0-or-later
   license_file: LICENSE.txt
   summary: The Remote Sensing and GIS software library (RSGISLib) is a collection of Python modules for processing remote sensing and GIS datasets.
 
