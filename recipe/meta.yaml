@@ -1,4 +1,4 @@
-{% set version = "5.0.2" %}
+{% set version = "5.0.3" %}
 
 package:
   name: rsgislib
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/remotesensinginfo/rsgislib/archive/refs/tags/{{ version }}.tar.gz
-  sha256: ef1ba2c67133b114b8f27893df96c510e0124283cf1b1f10b80b51f03df303f5
+  sha256: fbe073b46365e9d8f6882e14b2d6bb8316d3c6e6282e55a8441becf3f9541561
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
