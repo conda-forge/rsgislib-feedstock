@@ -1,4 +1,4 @@
-{% set version = "5.0.3" %}
+{% set version = "5.0.4" %}
 
 package:
   name: rsgislib
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/remotesensinginfo/rsgislib/archive/refs/tags/{{ version }}.tar.gz
-  sha256: fbe073b46365e9d8f6882e14b2d6bb8316d3c6e6282e55a8441becf3f9541561
+  sha256: 6ce4c5b108231d043aa5802d783c18cf9bf7166ef852dec1c0a8924fff881021
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -41,15 +41,7 @@ requirements:
 test:
   requires:
     - pytest
-    - geopandas
-    - scikit-learn
-    - scikit-image
-    - scikit-optimize
-    - imbalanced-learn
-    - matplotlib
     - scipy
-    - xgboost
-    - lightgbm
   source_files:
     - python_tests
   commands:
