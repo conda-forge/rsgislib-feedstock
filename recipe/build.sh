@@ -3,8 +3,7 @@
 mkdir build && cd build
 
 cmake -D CMAKE_INSTALL_PREFIX=${PREFIX} \
-    -D Python_ROOT_DIR:FILEPATH=${PREFIX} \
-    -D Python_FIND_STRATEGY=LOCATION \
+    -D Python_EXECUTABLE=$PYTHON \
     -D CMAKE_FIND_FRAMEWORK=NEVER \
     -D CMAKE_PREFIX_PATH=${PREFIX} \
     -D BOOST_INCLUDE_DIR=${PREFIX}/include \
