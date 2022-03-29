@@ -1,12 +1,12 @@
-{% set version = "5.0.5" %}
+{% set version = "5.0.6" %}
 
 package:
   name: rsgislib
   version: {{ version }}
 
 source:
-  url: https://github.com/remotesensinginfo/rsgislib/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 664bca755720b1023cd18a8c47d14a6a89353b6cb9029796eae595e9cc7e7802
+  git_url: https://github.com/remotesensinginfo/rsgislib.git
+  git_tag: main
 
 build:
   number: 0
