@@ -5,12 +5,12 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/remotesensinginfo/rsgislib.git
-  git_tag: main
+  url: https://github.com/remotesensinginfo/rsgislib/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 9bb5b2b40f8d12504b1277e3f6f6b28f065be5b6dbb5a8745fdd83394248dc60
 
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
