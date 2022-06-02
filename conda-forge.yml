@@ -1,10 +1,9 @@
-provider:
-  win: azure
-conda_forge_output_validation: true
 build_platform:
   osx_arm64: osx_64
-test_on_native_only: true
-
+conda_forge_output_validation: true
 github:
   branch_name: main
   tooling_branch_name: main
+provider:
+  win: azure
+test_on_native_only: true
