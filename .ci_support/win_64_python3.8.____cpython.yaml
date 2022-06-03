@@ -9,7 +9,7 @@ channel_targets:
 cxx_compiler:
 - vs2017
 gdal:
-- '3.4'
+- '3.5'
 gsl:
 - '2.7'
 hdf5:
