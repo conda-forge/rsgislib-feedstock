@@ -13,7 +13,7 @@ gdal:
 gsl:
 - '2.7'
 hdf5:
-- 1.12.1
+- 1.12.2
 kealib:
 - '1.4'
 pin_run_as_build:
