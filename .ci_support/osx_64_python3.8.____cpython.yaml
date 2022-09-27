@@ -27,10 +27,6 @@ macos_machine:
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
-  gdal:
-    max_pin: x.x
-  kealib:
-    max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x
