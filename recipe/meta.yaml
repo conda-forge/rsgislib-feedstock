@@ -45,6 +45,7 @@ test:
   requires:
     - pytest
     - scipy
+    - matplotlib
   source_files:
     - python_tests
   commands:
