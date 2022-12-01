@@ -21,7 +21,7 @@ gsl:
 hdf5:
 - 1.12.2
 kealib:
-- '1.4'
+- '1.5'
 macos_machine:
 - arm64-apple-darwin20.0.0
 pin_run_as_build:
