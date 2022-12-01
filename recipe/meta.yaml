@@ -11,7 +11,7 @@ source:
     - 0001-Add-gdal.lib-to-library-list-for-windows.-Name-chang.patch
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
