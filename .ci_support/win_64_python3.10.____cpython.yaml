@@ -15,7 +15,7 @@ gsl:
 hdf5:
 - 1.12.2
 kealib:
-- '1.4'
+- '1.5'
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
