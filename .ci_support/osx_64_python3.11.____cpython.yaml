@@ -19,7 +19,7 @@ gdal:
 gsl:
 - '2.7'
 hdf5:
-- 1.14.1
+- 1.14.2
 kealib:
 - '1.5'
 macos_machine:
