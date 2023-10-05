@@ -9,7 +9,7 @@ source:
   sha256: 7c5314c7e99fbb44d4fb110fda6bf81f65a9285f2690b6573bf458b93b5d91a8
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -25,7 +25,7 @@ requirements:
     - muparser
     - gsl
     - gdal
-    - boost-cpp
+    - libboost-devel
     - kealib
     - tqdm
   run:
@@ -36,7 +36,6 @@ requirements:
     - muparser
     - gsl
     - gdal
-    - boost-cpp
     - kealib
     - tqdm
     - rios
