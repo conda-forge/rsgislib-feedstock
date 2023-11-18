@@ -7,7 +7,7 @@ channel_targets:
 cxx_compiler:
 - vs2019
 gdal:
-- '3.7'
+- '3.8'
 gsl:
 - '2.7'
 hdf5:
