@@ -69,7 +69,7 @@ test:
     - rsgislib.vectorgeoms
     - rsgislib.vectorutils
     - rsgislib.zonalstats
-    
+
 
 about:
   home: http://www.rsgislib.org
