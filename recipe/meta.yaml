@@ -5,8 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/remotesensinginfo/rsgislib.git
-  git_tag: main
+  url: https://github.com/remotesensinginfo/rsgislib/archive/refs/tags/{{ version }}.tar.gz
+  sha256: bd13c3c7389d2a9ea93c3bb3d96ea263817755ee282efdd402423abaf2327875
 
 build:
   number: 0
@@ -45,7 +45,6 @@ test:
     - pytest
     - scipy
     - matplotlib
-    - geopandas
   source_files:
     - python_tests
   commands:
