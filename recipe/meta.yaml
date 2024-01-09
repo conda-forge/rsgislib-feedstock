@@ -1,4 +1,4 @@
-{% set version = "5.0.17" %}
+{% set version = "5.1.0" %}
 
 package:
   name: rsgislib
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/remotesensinginfo/rsgislib/archive/refs/tags/{{ version }}.tar.gz
-  sha256: bd13c3c7389d2a9ea93c3bb3d96ea263817755ee282efdd402423abaf2327875
+  sha256: 41e49245214e3fb75d67173c6e96150198dcd1a06d191d2611ad1fea56baf9ed
 
 build:
   number: 0
@@ -69,7 +69,7 @@ test:
     - rsgislib.vectorgeoms
     - rsgislib.vectorutils
     - rsgislib.zonalstats
-    
+
 
 about:
   home: http://www.rsgislib.org
