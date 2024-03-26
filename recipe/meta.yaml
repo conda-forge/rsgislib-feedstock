@@ -9,13 +9,14 @@ source:
   sha256: cd54b57d385278cbc95c1fa262b0fe923bc348228aa6a9bde34d42f3b5cbb4d8
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - cmake
     - make  # [unix]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
