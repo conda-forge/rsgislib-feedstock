@@ -46,6 +46,7 @@ test:
     - pytest
     - scipy
     - matplotlib
+    - libgdal-kea 
   source_files:
     - python_tests
   commands:
