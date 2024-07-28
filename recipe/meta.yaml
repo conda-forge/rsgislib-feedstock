@@ -1,12 +1,12 @@
-{% set version = "5.1.6" %}
+{% set version = "5.1.7" %}
 
 package:
   name: rsgislib
   version: {{ version }}
 
 source:
-  url: https://github.com/remotesensinginfo/rsgislib/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 9547c0b00f963dcd9babaf679dc356a36e05c179f82bb55aa1e45268ce2bd1a4
+  git_url: https://github.com/remotesensinginfo/rsgislib.git
+  git_tag: main
 
 build:
   number: 0
@@ -40,6 +40,7 @@ requirements:
     - kealib
     - tqdm
     - rios
+    - geopandas
 
 test:
   requires:
