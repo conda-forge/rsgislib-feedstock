@@ -40,7 +40,6 @@ requirements:
     - kealib
     - tqdm
     - rios
-    - geopandas
 
 test:
   requires:
