@@ -5,11 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/remotesensinginfo/rsgislib.git
-  git_tag: main
+  url: https://github.com/remotesensinginfo/rsgislib/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 22750fc1023492e0349703202ae6c8c20644a64bcb81ee9656702d97590aec8c
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -40,6 +40,7 @@ requirements:
     - kealib
     - tqdm
     - rios
+    - libgdal-kea
 
 test:
   requires:
