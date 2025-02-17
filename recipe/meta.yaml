@@ -43,6 +43,16 @@ requirements:
     - libgdal-kea
 
 test:
+  requires:
+    - pytest
+    - scipy
+    - matplotlib
+    - libgdal-kea
+    - geopandas
+  source_files:
+    - python_tests
+  commands:
+    - pytest python_tests/test_imagecalc.py
   imports:
     - rsgislib
     - rsgislib.changedetect
