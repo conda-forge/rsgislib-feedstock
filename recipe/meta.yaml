@@ -52,7 +52,7 @@ test:
   source_files:
     - python_tests
   commands:
-    - pytest python_tests/test_imagecalc.py
+    - pytest python_tests/test_imagecalc.py -p no:warnings
   imports:
     - rsgislib
     - rsgislib.changedetect
