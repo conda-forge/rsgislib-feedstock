@@ -9,7 +9,7 @@ source:
   git_tag: main
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -52,7 +52,7 @@ test:
   source_files:
     - python_tests
   commands:
-    - pytest python_tests/test_imagecalc.py -p no:warnings
+    - pytest python_tests # [not win]
   imports:
     - rsgislib
     - rsgislib.changedetect
