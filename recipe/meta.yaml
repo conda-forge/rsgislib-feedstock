@@ -1,4 +1,4 @@
-{% set version = "5.1.7" %}
+{% set version = "5.1.8" %}
 
 package:
   name: rsgislib
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/remotesensinginfo/rsgislib/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 22750fc1023492e0349703202ae6c8c20644a64bcb81ee9656702d97590aec8c
+  sha256: f99cd4773ab617545fbff5fb7ab177659b2f9258cdd926602004831ed1112f07
 
 build:
-  number: 3
+  number: 0
 
 requirements:
   build:
@@ -47,11 +47,12 @@ test:
     - pytest
     - scipy
     - matplotlib
-    - libgdal-kea 
+    - libgdal-kea
+    - geopandas
   source_files:
     - python_tests
   commands:
-    - pytest python_tests
+    - pytest python_tests                    # [not win]
   imports:
     - rsgislib
     - rsgislib.changedetect
