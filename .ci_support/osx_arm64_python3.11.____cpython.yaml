@@ -22,8 +22,6 @@ gdal:
 - '3.12'
 gsl:
 - '2.7'
-hdf5:
-- 1.14.3
 kealib:
 - '1.6'
 libboost_devel:
