@@ -1,12 +1,12 @@
-{% set version = "5.1.8" %}
+{% set version = "5.2.0" %}
 
 package:
   name: rsgislib
   version: {{ version }}
 
 source:
-  url: https://github.com/remotesensinginfo/rsgislib/archive/refs/tags/{{ version }}.tar.gz
-  sha256: f99cd4773ab617545fbff5fb7ab177659b2f9258cdd926602004831ed1112f07
+  git_url: https://github.com/remotesensinginfo/rsgislib.git
+  git_tag: main
 
 build:
   number: 1
@@ -22,7 +22,6 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - python
-    - hdf5
     - muparser
     - gsl
     - gdal
@@ -32,7 +31,6 @@ requirements:
   run:
     - python
     - numpy
-    - hdf5
     - h5py
     - muparser
     - gsl
@@ -48,7 +46,6 @@ test:
     - scipy
     - matplotlib
     - libgdal-kea
-    - geopandas
   source_files:
     - python_tests
   commands:
