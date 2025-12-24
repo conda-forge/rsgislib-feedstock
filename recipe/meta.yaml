@@ -22,7 +22,6 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - python
-    - hdf5
     - muparser
     - gsl
     - gdal
@@ -32,7 +31,6 @@ requirements:
   run:
     - python
     - numpy
-    - hdf5
     - h5py
     - muparser
     - gsl
