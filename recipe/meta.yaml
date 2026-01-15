@@ -9,7 +9,7 @@ source:
   git_tag: main
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -46,6 +46,7 @@ test:
     - scipy
     - matplotlib
     - libgdal-kea
+    - geopandas
   source_files:
     - python_tests
   commands:
