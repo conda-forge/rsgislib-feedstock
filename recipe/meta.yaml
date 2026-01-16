@@ -9,7 +9,7 @@ source:
   git_tag: main
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -26,9 +26,7 @@ requirements:
     - gsl
     - gdal
     - libgdal
-    - libboost
     - libboost-devel
-    - libboost-headers
     - kealib
     - tqdm
   run:
