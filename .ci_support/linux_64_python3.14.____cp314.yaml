@@ -23,7 +23,7 @@ gsl:
 kealib:
 - '1.6'
 libboost_devel:
-- '1.86'
+- '1.88'
 pin_run_as_build:
   python:
     min_pin: x.x
