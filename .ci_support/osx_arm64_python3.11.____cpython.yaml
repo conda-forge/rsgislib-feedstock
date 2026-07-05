@@ -23,7 +23,7 @@ gdal:
 gsl:
 - '2.7'
 kealib:
-- '1.6'
+- '2.0'
 libboost_devel:
 - '1.90'
 macos_machine:
