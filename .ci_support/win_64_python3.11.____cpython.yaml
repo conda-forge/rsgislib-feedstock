@@ -11,7 +11,7 @@ cxx_compiler:
 gdal:
 - '3.13'
 gsl:
-- '2.7'
+- '2.8'
 kealib:
 - '2.0'
 libboost_devel:
